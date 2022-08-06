@@ -1,0 +1,26 @@
+@import "./assets/fonts.scss";
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+}
+.container{
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.cats-container{
+  .row{
+      display: flex;
+      // justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+  }
+}
