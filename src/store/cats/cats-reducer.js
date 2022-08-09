@@ -40,7 +40,6 @@ export const catsReducer = (state = initialState, { type, payload }) => {
                 status: "loading",
                 error: null,
             };
-
         default:
             return state;
     }

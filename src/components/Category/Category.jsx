@@ -1,13 +1,13 @@
-import React, {useEffect} from "react";
-import {useParams} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {loadCategoriesById} from "../../store/cats/cats-action";
-import {Loader, selectCatsByCategories} from "../../store/cats/cats-selector";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loadCategoriesById } from "../../store/cats/cats-action";
+import { Loader, selectCatsByCategories } from "../../store/cats/cats-selector";
 import Card from "../Card/Card";
 import LoaderComponent from "../LoaderComponent/Loader";
 
 const Category = () => {
-  const {ids} = useParams();
+  const { ids } = useParams();
   const dispatch = useDispatch();
 
   const list = useSelector(selectCatsByCategories);
@@ -17,6 +17,8 @@ const Category = () => {
     ids && dispatch(loadCategoriesById(ids));
   }, [ids, dispatch]);
 
+  console.log("List", list);
+
   return loader === "loading" ? (
     <>
       <LoaderComponent />
@@ -24,7 +26,7 @@ const Category = () => {
   ) : (
     <div className="cats-container">
       <div className="row">
-        {list.map(item => {
+        {list.map((item) => {
           const carsProps = {
             id: item.id,
             url: item.url,
